@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add New Habit</title>
+</head>
+<body>
+    <h1>Add New Habit</h1>
+    <form action="{{ url_for('add_habit') }}" method="post">
+        <label for="name">Habit Name:</label>
+        <input type="text" id="name" name="name"><br>
+        <label>Periodicity:</label>
+        <div>
+            <input type="radio" id="daily" name="periodicity_days" value="1">
+            <label for="daily">Daily Habit (1 day)</label><br>
+            <input type="radio" id="weekly" name="periodicity_days" value="7">
+            <label for="weekly">Weekly (7 days)</label><br>
+            <input type="radio" id="monthly" name="periodicity_days" value="30">
+            <label for="monthly">Monthly (30 days)</label>
+        </div>
+        <button type="submit">Add Habit</button>
+    </form>
+</body>
+</html>

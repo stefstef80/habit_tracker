@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Habit Tracker</title>
+</head>
+<body>
+    <h1>Habit Tracker</h1>
+    <ul>
+        {% for habit in habits %}
+            <li>
+                {{ habit.name }} -
+                Last Completed: {{ habit.completions[-1] if habit.completions else 'Never' }} -
+                Current Streak: {{ habit.current_streak() }} Days -
+                Previous Longest Streak: {{ habit.longest_streak() }} Days - <!-- Displaying the longest streak for each habit -->
+                <a href="{{ url_for('complete_habit', habit_name=habit.name) }}">Complete Now</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <h2>Analysis</h2>
+    <p>Longest Streak Across All Habits: {{ longest_streak_all }} days</p>
+    <p>Daily Habits: {{ daily_habits }}</p>
+    <p>Struggled Last Month: {{ struggled_last_month }}</p>
+    <form action="{{ url_for('habits_by_periodicity') }}" method="post">
+        <input type="number" name="periodicity_days" placeholder="Enter days to filter habits">
+        <button type="submit">Filter Habits by Periodicity</button>
+    </form>
+    {% if periodicity_habits %}
+        <h2>Habits with Specified Periodicity</h2>
+        <ul>
+            {% for habit in periodicity_habits %}
+                <li>{{ habit }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <h2>Add New Habit</h2>
+    <a href="{{ url_for('add_habit') }}">Add New Habit</a>
+</body>
+</html>
