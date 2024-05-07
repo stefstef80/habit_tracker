@@ -58,7 +58,7 @@ longest_streak(habit_name): Returns the longest streak for a specific habit.
 
 Usage
 
-once you cloned the project and installed flaks, run the command (in your terminal):
+once you cloned the project and installed flask, run the command (in your terminal):
 python -m flask run
 
 Visit http://localhost:5000 in your web browser to access the Habit Tracker.
