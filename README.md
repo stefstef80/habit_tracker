@@ -4,7 +4,7 @@
 This Python-based Habit Tracker helps users track and maintain their daily habits. It utilizes Flask to serve web content and manages habit data using a simple JSON file, ensuring ease of use and setup.
 
 ## Installation
-```bash
+bash
 pip install flask
 Prerequisites
 Python 3.6 or higher
@@ -16,18 +16,18 @@ git clone https://github.com/stefstef80/habit_tracker.git
 
 
 
-Core Classes and Methods
+# Core Classes and Methods
 
-Habit Class
+##Habit Class
 The Habit class represents an individual habit. It encapsulates all the properties and methods necessary for managing a habit's lifecycle, such as tracking completions and calculating streaks.
 
-Properties
+### Properties
 name (str): The name of the habit.
 periodicity (timedelta): The frequency with which the habit should be completed.
 start_date (date): The date when the habit tracking started.
 completions (list[date]): A list of dates when the habit was completed.
 
-Methods
+### Methods
 complete(completion_date=date.today()): Marks the habit as completed on a given date. If no date is provided, it defaults to today's date.
 to_json(): Serializes the habit to a JSON-compatible dictionary for storage.
 from_json(data): Deserializes a JSON string into a Habit instance.
@@ -36,13 +36,13 @@ longest_streak(): Determines the longest streak of consecutive completions.
 
 
 
-HabitTracker Class
+## HabitTracker Class
 The HabitTracker class manages a collection of Habit instances. It provides functionality to add habits, track completions, and retrieve habit-related statistics.
 
-Properties
+### Properties
 file_path (str): The path to the JSON file where habits are stored.
 
-Methods
+### Methods
 add_habit(habit): Adds a new Habit instance to the tracker.
 load_habits(): Loads all habits from the JSON file.
 save_habits(): Saves all habits to the JSON file.
