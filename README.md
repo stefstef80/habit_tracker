@@ -19,7 +19,7 @@ git clone https://github.com/stefstef80/habit_tracker.git
 # Core Classes and Methods
 The two main (and only) classes are the Habit and HabitTracker classes.
 
-##Habit Class
+## Habit Class
 The Habit class represents an individual habit. It encapsulates all the properties and methods necessary for managing a habit's lifecycle, such as tracking completions and calculating streaks.
 
 ### Properties
